@@ -28,6 +28,7 @@
   "dependencies": {
     "@types/node": "^8.0.29",
     "mysql": "^2.14.1",
+    "pg": "^7.4.1",
     "reflect-metadata": "^0.1.10",
     "typeorm": "^0.1.0"
   },

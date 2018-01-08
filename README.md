@@ -1,3 +1,5 @@
+Repro of slow query performance when selecting and ordering from `Post`, while filtering on `Blog`.
+
 # Example how to use TypeORM with TypeScript
 
 1. clone repository 

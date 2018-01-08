@@ -1,13 +1,13 @@
 {
   "name": "default",
-  "type": "mysql",
+  "type": "postgres",
   "host": "localhost",
-  "port": 3306,
-  "username": "test",
-  "password": "test",
+  "port": 5432,
+  "username": "master",
+  "password": "password",
   "database": "test",
   "synchronize": true,
-  "logging": false,
+  "logging": true,
   "entities": [
     "src/entity/*.js"
   ],
