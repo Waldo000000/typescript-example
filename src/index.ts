@@ -42,8 +42,12 @@ createConnection().then(async connection => {
 
     const posts = await connection.getRepository(Post)
         .createQueryBuilder('post')
-        .innerJoinAndSelect('post.blog', 'blog')
-        .where('blog.author = :author', { author: 'Sharon Mwangi' })
+        .where(qb => `post.blog_id IN ${qb
+            .subQuery()
+            .select('blog.id')
+            .from(Blog, 'blog')
+            .where('blog.author = :author', { author: 'Sharon Mwangi' })
+            .getQuery()}`)
         .orderBy('post.createdAt', 'DESC')
         .skip(1)
         .take(5)
